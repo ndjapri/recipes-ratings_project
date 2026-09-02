@@ -69,6 +69,28 @@ The number of ingredients is concentrated around relatively small values. A reci
 
 #### Bivariate Analysis
 
+Relationships between pairs of variables were examined to identify possible associations with recipe ratings.
+
+##### Number of Ingredients vs. Average Rating
+
+[INSERT INTERACTIVE PLOT: `ingredients_rating.html`]
+
+There does not appear to be a strong relationship between the number of ingredients and average rating. Recipes with both few and many ingredients can receive high or low ratings, suggesting that the number of ingredients alone may not be a strong predictor of recipe ratings.
+
+##### Recipe Tags vs. Average Rating
+
+[INSERT INTERACTIVE PLOT: `tags_rating.html`]
+
+The distributions of average ratings are similar across the most common recipe tags, with most recipes receiving ratings near 4.5–5.0. Although some tags have slightly different distributions, there is no large difference in ratings across these common categories.
+
+#### Interesting Aggregates
+
+Recipes were grouped by their tags, and both the number of recipes and average rating were calculated.
+
+[INSERT GROUPED TABLE HERE]
+
+The grouped table shows that average ratings vary somewhat across recipe types. For example, **beverages and cocktails have some of the highest average ratings**, while **crock-pot-slow-cooker and casseroles have lower average ratings** among the categories shown. This suggests that recipe type may be associated with ratings, although the differences are relatively small.
+
 ### Assessment of Missingness
 
 ### Hypothesis Testing
