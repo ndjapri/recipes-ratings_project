@@ -73,13 +73,23 @@ Relationships between pairs of variables were examined to identify possible asso
 
 ##### Number of Ingredients vs. Average Rating
 
-[INSERT INTERACTIVE PLOT: `ingredients_rating.html`]
+<iframe
+src="assets/ingredients_vs_rating.html"
+width="800"
+height="600"
+frameborder="0"
+></iframe>
 
 There does not appear to be a strong relationship between the number of ingredients and average rating. Recipes with both few and many ingredients can receive high or low ratings, suggesting that the number of ingredients alone may not be a strong predictor of recipe ratings.
 
 ##### Recipe Tags vs. Average Rating
 
-[INSERT INTERACTIVE PLOT: `tags_rating.html`]
+<iframe
+src="assets/top_tags_boxplot.html"
+width="800"
+height="600"
+frameborder="0"
+></iframe>
 
 The distributions of average ratings are similar across the most common recipe tags, with most recipes receiving ratings near 4.5–5.0. Although some tags have slightly different distributions, there is no large difference in ratings across these common categories.
 
