@@ -23,6 +23,52 @@ These variables are used to explore the patterns in recipe ratings and investiga
 
 ### Data Cleaning and Exploratory Data Analysis
 
+#### Data Cleaning
+
+The recipe data was first combined with the user interaction data so that each recipe could be analyzed together with its ratings. The interaction data contains user ratings, while the recipe data contains information such as ingredients, preparation time, tags, and descriptions.
+
+Any rating of `0` is replaced with `NaN` so that it would not incorrectly lower the average rating of a recipe. This is done because a rating of `0` does not represent a genuine zero-star rating in this dataset. Instead, it indicates that a rating was not provided.
+
+The average rating was then calculated for each recipe using its available user ratings, and this value was added to the recipe dataset as `avg_rating`. The `tags` column was also converted into lists so that individual tags could be analyzed across recipes.
+
+After cleaning and calculating average ratings, **81,173 recipes had an available average rating**.
+
+The following cleaned variables were used throughout the analysis:
+
+- `avg_rating` — the average rating received by a recipe.
+- `n_ingredients` — the number of ingredients used in a recipe.
+- `minutes` — the preparation time in minutes.
+- `tags` — descriptive tags associated with each recipe.
+- `description` — the written description of each recipe.
+
+#### Univariate Analysis
+
+The distributions of average recipe ratings and number of ingredients were examined separately.
+
+##### Average Rating
+
+<iframe
+src="assets/avg_rating_histogram.html"
+width="800"
+height="600"
+frameborder="0"
+></iframe>
+
+The distribution of average ratings is heavily concentrated at the upper end of the rating scale. The mean rating is **4.63**, while the median is **5.0**, and 75% of recipes have a rating of 5.0. This indicates that recipes in the dataset generally receive very high ratings, with relatively few recipes receiving ratings below 4.
+
+##### Number of Ingredients
+
+<iframe
+src="assets/n_ingredients_histogram.html"
+width="800"
+height="600"
+frameborder="0"
+></iframe>
+
+The number of ingredients is concentrated around relatively small values. A recipe uses an average of **9.21 ingredients**, with a median of **9 ingredients**, while the middle 50% of recipes use between **6 and 11 ingredients**. The distribution is right-skewed, with a smaller number of recipes using substantially more ingredients, reaching as high as 37.
+
+#### Bivariate Analysis
+
 ### Assessment of Missingness
 
 ### Hypothesis Testing
