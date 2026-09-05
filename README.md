@@ -145,15 +145,15 @@ I investigated whether recipes tagged as "easy" have different average ratings c
 
 ### Hypotheses
 
-The null hypothesis (H_0) is that there is no difference in the average rating between easy recipes and non-easy recipes.
+The null hypothesis (H₀) is that there is no difference in the average rating between easy recipes and non-easy recipes.
 
-The alternative hypothesis (H_A) is that there is a difference in the average rating between easy recipes and non-easy recipes.
+The alternative hypothesis (Hₐ) is that there is a difference in the average rating between easy recipes and non-easy recipes.
 
 ### Permutation Test
 
 To test this hypothesis, I performed a permutation test using the difference in mean average ratings between the two groups as the test statistic. This statistic was chosen because the question compares the average ratings of two groups.
 
-The significance level was set to alpha = 0.05. The observed difference in average rating between easy and non-easy recipes was approximately 0.0109, with easy recipes having a slightly higher average rating.
+The significance level was set to α = 0.05. The observed difference in average rating between easy and non-easy recipes was approximately 0.0109, with easy recipes having a slightly higher average rating.
 
 The permutation test produced a p-value of 0.0. Since the p-value is less than the significance level of 0.05, I reject the null hypothesis.
 
@@ -196,3 +196,27 @@ The final model achieved an RMSE of approximately 0.4899 on the test set, which 
 
 
 ## Fairness Analysis
+
+### Group Selection
+
+The two groups compared are recipes tagged as "easy" and recipes that are not tagged as "easy". The goal is to determine whether the final model performs differently between these two groups.
+
+### Evaluation Metric
+
+Since the prediction task is regression, RMSE is used as the evaluation metric. A lower RMSE indicates that the model's predictions are closer to the true average ratings.
+
+### Hypotheses
+
+The null hypothesis (H₀) is that the model performs similarly for easy and non-easy recipes, and any difference in RMSE is due to random chance.
+
+The alternative hypothesis (Hₐ) is that the model performs differently between easy and non-easy recipes, resulting in a difference in RMSE.
+
+### Permutation Test
+
+The observed difference in RMSE between easy and non-easy recipes was approximately -0.0302, with easy recipes having a lower RMSE (0.4771) compared to non-easy recipes (0.5073).
+
+A permutation test was performed using the difference in RMSE between the two groups as the test statistic. The significance level was set to α = 0.05.
+
+The permutation test produced a p-value of 0.0. Since the p-value is less than the significance level, the null hypothesis is rejected.
+
+This suggests that there is statistically significant evidence that the model performs differently for easy and non-easy recipes. The model performs slightly better on easy recipes, as shown by the lower RMSE.
