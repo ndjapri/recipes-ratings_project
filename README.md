@@ -188,4 +188,11 @@ The baseline model achieved an RMSE of approximately 0.49 on the test set. This 
 
 ## Final Model
 
+The final model adds two engineered features to the baseline model: `is_easy` and `is_quick`. These features indicate whether a recipe is tagged as "easy" or "30-minutes-or-less". These tags provide additional information about the recipe's difficulty and preparation time, which may have an influence on user ratings.
+
+The final model uses Ridge Regression with StandardScaler in a sklearn Pipeline. Ridge Regression was chosen because it can reduce the impact of unnecessary feature weights and help prevent overfitting. The regularization parameter, alpha, was tuned using GridSearchCV with 5-fold cross-validation. The best value of alpha was 100.
+
+The final model achieved an RMSE of approximately 0.4899 on the test set, which is a slight improvement over the baseline model's RMSE of approximately 0.4900. This indicates that the additional features provided a small improvement in predicting average recipe ratings.
+
+
 ## Fairness Analysis
