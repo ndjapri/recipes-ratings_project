@@ -104,6 +104,39 @@ The grouped tables show that average ratings differ somewhat across recipe tags.
 
 ## Assessment of Missingness
 
+### MNAR Analysis
+
+The `avg_rating` column contains missing values. I believe that the missingness in `avg_rating` may be MNAR (Missing Not At Random). A possible explanation is that recipes are missing ratings because they have received too few ratings from users. Since the number of ratings a recipe receives may be related to its popularity or quality, the reason that a rating is missing could depend on the unobserved rating value itself.
+
+However, we are unable to determine with certainty whether `avg_rating` is truly MNAR using only the observed dataset. Additional information about the rating collection process, such as whether recipes require a minimum number of ratings before an average rating is displayed, would help verify the missingness mechanism.
+
+### Missingness Dependency
+
+To investigate whether the missingness of `avg_rating` depends on other variables, permutation tests were performed. Specifically, the distributions of variables between recipes were compared with the missing and non-missing `avg_rating` values.
+
+First, I tested whether missingness in `avg_rating` depends on the `minutes` column. The observed difference in average preparation time between recipes with missing and non-missing ratings was approximately 122.7 minutes.
+
+After performing 1000 permutation simulations, a p-value of 0.023 was obtained. Since this p-value is less than 0.05, we reject the null hypothesis that missingness in `avg_rating` is independent of `minutes`. This suggests that the missingness of `avg_rating` depends on recipe preparation time.
+
+<iframe
+src="assets/minutes_perm.html"
+width="800"
+height="600"
+frameborder="0"
+></iframe>
+
+Next, I also tested whether missingness in `avg_rating` depends on the length of the recipe description. The observed difference in average description length between recipes with missing and non-missing ratings was approximately -5.92 characters.
+
+The permutation test produced a p-value of 0.145. Since this p-value is greater than 0.05, we fail to reject the null hypothesis that missingness in `avg_rating` is independent of description length. Therefore, we do not find sufficient evidence that the missingness of `avg_rating` depends on description length.
+
+<iframe
+src="assets/description_perm.html"
+width="800"
+height="600"
+frameborder="0"
+></iframe>
+
+
 ## Hypothesis Testing
 
 ## Framing a Prediction Problem
