@@ -139,6 +139,33 @@ frameborder="0"
 
 ## Hypothesis Testing
 
+### Research Question
+
+I investigated whether recipes tagged as "easy" have different average ratings compared to recipes that are not tagged as "easy".
+
+### Hypotheses
+
+The null hypothesis ($H_0$) is that there is no difference in the average rating between easy recipes and non-easy recipes.
+
+The alternative hypothesis ($H_A$) is that there is a difference in the average rating between easy recipes and non-easy recipes.
+
+### Permutation Test
+
+To test this hypothesis, I performed a permutation test using the difference in mean average ratings between the two groups as the test statistic. This statistic was chosen because the question compares the average ratings of two groups.
+
+The significance level was set to $\alpha = 0.05$. The observed difference in average rating between easy and non-easy recipes was approximately 0.0109, with easy recipes having a slightly higher average rating.
+
+The permutation test produced a p-value of 0.0. Since the p-value is less than the significance level of 0.05, I reject the null hypothesis.
+
+This suggests that there is statistically significant evidence of a difference in average ratings between easy and non-easy recipes. However, the difference in average rating is relatively small, indicating that being tagged as "easy" is associated with only a slight difference in ratings.
+
+<iframe
+src="assets/easy_perm.html"
+width="800"
+height="600"
+frameborder="0"
+></iframe>
+
 ## Framing a Prediction Problem
 
 ## Baseline Model
