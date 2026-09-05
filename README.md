@@ -168,6 +168,14 @@ frameborder="0"
 
 ## Framing a Prediction Problem
 
+The prediction problem is to predict the average rating (`avg_rating`) of a recipe using information available at the time of prediction.
+
+This is a regression problem because the response variable, `avg_rating`, is a continuous numerical value.
+
+The response variable was chosen because it represents how well a recipe is received by users. The model only uses information available before the rating is observed to avoid data leakage.
+
+The model will be evaluated using Root Mean Squared Error (RMSE), which measures the magnitude of prediction errors while penalizing larger errors more strongly. RMSE is appropriate here because the goal is to predict a numerical value rather than assign categories.
+
 ## Baseline Model
 
 ## Final Model
