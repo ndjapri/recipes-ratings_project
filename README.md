@@ -145,15 +145,15 @@ I investigated whether recipes tagged as "easy" have different average ratings c
 
 ### Hypotheses
 
-The null hypothesis ($H_0$) is that there is no difference in the average rating between easy recipes and non-easy recipes.
+The null hypothesis (H_0) is that there is no difference in the average rating between easy recipes and non-easy recipes.
 
-The alternative hypothesis ($H_A$) is that there is a difference in the average rating between easy recipes and non-easy recipes.
+The alternative hypothesis (H_A) is that there is a difference in the average rating between easy recipes and non-easy recipes.
 
 ### Permutation Test
 
 To test this hypothesis, I performed a permutation test using the difference in mean average ratings between the two groups as the test statistic. This statistic was chosen because the question compares the average ratings of two groups.
 
-The significance level was set to $\alpha = 0.05$. The observed difference in average rating between easy and non-easy recipes was approximately 0.0109, with easy recipes having a slightly higher average rating.
+The significance level was set to alpha = 0.05. The observed difference in average rating between easy and non-easy recipes was approximately 0.0109, with easy recipes having a slightly higher average rating.
 
 The permutation test produced a p-value of 0.0. Since the p-value is less than the significance level of 0.05, I reject the null hypothesis.
 
@@ -177,6 +177,14 @@ The response variable was chosen because it represents how well a recipe is rece
 The model will be evaluated using Root Mean Squared Error (RMSE), which measures the magnitude of prediction errors while penalizing larger errors more strongly. RMSE is appropriate here because the goal is to predict a numerical value rather than assign categories.
 
 ## Baseline Model
+
+The baseline model predicts the average rating (`avg_rating`) of a recipe using two features: `minutes` and `n_ingredients`. Both features are quantitative variables representing the preparation time and number of ingredients in a recipe.
+
+The model uses a Linear Regression model implemented in a sklearn Pipeline. Before training, the features are standardized using StandardScaler to ensure that both features are on a comparable scale. No categorical encoding was required because both selected features are numerical.
+
+The dataset was split into training and testing sets using an 80/20 split. The model was evaluated using Root Mean Squared Error (RMSE), which measures the average magnitude of prediction errors.
+
+The baseline model achieved an RMSE of approximately 0.49 on the test set. This means that the model's predictions are typically off by about 0.49 rating points. While this provides a pretty reasonable starting point, the model only currently uses two simple recipe features, so additional feature engineering may improve its ability to predict ratings.
 
 ## Final Model
 
